@@ -5,27 +5,28 @@ using UnityEngine;
 public class BlobWall : MonoBehaviour
 {
     public Rigidbody2D body;
-    
     public Rigidbody2D playerbody;
-    
     bool startSequenceEnded = false;
-    
     float t = 0;
-    
     //float newtimer = 0;
-    
     bool canTP = true;
+    private manager manager;
+
+    private void Start()
+    {
+        manager = FindObjectOfType<manager>();
+    }
 
     private void Update()
     {
-        t += Time.deltaTime;
+        
 
-        if (startSequenceEnded == false)
+        if (startSequenceEnded == false && manager.gameStarted == true)
         {
-            
-            if (t < 12.5)
+            t += Time.deltaTime;
+            if (t < 11.5)
             {
-                body.velocity = new Vector2(2 * t + 8, 0);
+                body.velocity = new Vector2(2 * t + 10, 0);
             }
             else
             {
@@ -66,5 +67,15 @@ public class BlobWall : MonoBehaviour
         
         }
 
+        
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Player")
+        {
+            manager.playerDied = true;
+        }
     }
 }

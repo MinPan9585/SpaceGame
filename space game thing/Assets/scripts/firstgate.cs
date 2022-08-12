@@ -9,12 +9,13 @@ public class firstgate : MonoBehaviour
     public GameObject enemy;
     public Transform enemyspawnpoint;
     Vector3 spawnpoint;
-
+    manager manager;
     private int randomint;
 
     private void Awake()
     {
         selftransform = this.transform;
+        manager = FindObjectOfType<manager>();
     }
     
     
@@ -36,6 +37,9 @@ public class firstgate : MonoBehaviour
     private void enemyspawn()
     {
         Instantiate(enemy, spawnpoint, enemyspawnpoint.rotation);
-        Invoke("enemyspawn", 1.5f);
+        if(manager.playerDied == false)
+        {
+            Invoke("enemyspawn", 2f);
+        }
     }
 }
