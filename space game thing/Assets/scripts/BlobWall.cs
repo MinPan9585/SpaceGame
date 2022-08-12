@@ -38,7 +38,7 @@ public class BlobWall : MonoBehaviour
         {
             
             
-            if (canTP == true && playerbody.velocity.x < 30) //low speed
+            if (canTP == true && playerbody.velocity.x < 33) //low speed
             {
                 body.position = new Vector2(playerbody.position.x - 30, 0);
                 body.velocity = new Vector2(33, 0); //regular max speed

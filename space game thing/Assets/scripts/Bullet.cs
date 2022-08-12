@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public Rigidbody2D bulletRigid;
-    public float force = 800f;
+    public float force = 200f;
     public Rigidbody2D playerbody;
     GameObject player;
     void Awake(){
@@ -14,5 +14,10 @@ public class Bullet : MonoBehaviour
         
         bulletRigid.velocity = playerbody.velocity;
         bulletRigid.AddForce(- transform.right * force);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Destroy(gameObject);
     }
 }

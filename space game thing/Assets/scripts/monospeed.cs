@@ -11,6 +11,8 @@ public class monospeed : MonoBehaviour
     private void Awake()
     {
         body.velocity = new Vector2(20, 0);
+        
+        Physics2D.IgnoreLayerCollision(6, 6);
     }
     private void Update()
     {

@@ -14,8 +14,8 @@ public class spawnSwarm : MonoBehaviour
     private void Awake()
     {
         selftransform = this.transform;
-        randomint = Random.Range(1, 5);
-        //Instantiate(presets[randomint], selftransform.position, selftransform.rotation);
+        randomint = Random.Range(0, presets.Length);
+        Instantiate(presets[randomint], selftransform.position, selftransform.rotation);
         Debug.Log(randomint);
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -24,6 +24,7 @@ public class spawnSwarm : MonoBehaviour
         {
             //Debug.Log("crossed");
             Instantiate(gate, new Vector3(selftransform.position.x + 128, 0, 0), new Quaternion (0,0,0,0));
+
         }
     }
 }
