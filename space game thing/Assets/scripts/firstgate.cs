@@ -31,7 +31,9 @@ public class firstgate : MonoBehaviour
 
     private void Update()
     {
-        spawnpoint = new Vector3(enemyspawnpoint.position.x, 0, 0);
+
+        randomint = Random.Range(-4, 4);
+        spawnpoint = new Vector3(enemyspawnpoint.position.x, randomint, 0);
     }
 
     private void enemyspawn()

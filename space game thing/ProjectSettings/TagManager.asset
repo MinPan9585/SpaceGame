@@ -13,10 +13,10 @@ TagManager:
   - Water
   - UI
   - enemy
-  - 
-  - 
-  - 
-  - 
+  - bullet
+  - BlobWall
+  - gates
+  - Player
   - 
   - 
   - 

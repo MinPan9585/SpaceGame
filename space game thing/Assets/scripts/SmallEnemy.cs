@@ -23,7 +23,7 @@ public class SmallEnemy : MonoBehaviour
     {
         if(manager.playerDied == false)
         {
-            speed = playerbody.velocity.x + 5;
+            speed = playerbody.velocity.x + 2.5f;
             enemyDirection = playerbody.transform.position - transform.position;
 
             rb2d.MovePosition((Vector2)transform.position + speed * enemyDirection.normalized * Time.fixedDeltaTime);

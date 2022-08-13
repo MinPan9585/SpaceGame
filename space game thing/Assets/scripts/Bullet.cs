@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public Rigidbody2D bulletRigid;
-    public float force = 200f;
+    public float force = 100f;
     public Rigidbody2D playerbody;
     GameObject player;
     void Awake(){
