@@ -116,6 +116,8 @@ MonoBehaviour:
   presets:
   - {fileID: 1443863314824887780, guid: adfcc0d75052e6144aaf9bbd93e2087e, type: 3}
   - {fileID: 7165198997832505840, guid: 1ef492a3818a5e2498bb5751fbcb797d, type: 3}
+  - {fileID: 2356212743587143897, guid: dc72a6277e69aef429ceb2faa0c00b9d, type: 3}
+  - {fileID: 8688179538362413958, guid: 2e3a1a10a5b4dad418d8847894803335, type: 3}
   selftransform: {fileID: 7624976326602307844}
 --- !u!61 &7624976326602307840
 BoxCollider2D:
