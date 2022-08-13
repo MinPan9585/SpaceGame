@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class manager : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class manager : MonoBehaviour
     public bool canEndGame;
     public GameObject blackscreen;
     public Transform playertransform;
+    public Text endGameText;
+    public GameObject player;
+    public int distanceEndGame;
+    public Text inGameText;
     void Start()
     {
         playerDied = false;
@@ -23,8 +28,14 @@ public class manager : MonoBehaviour
         {
             if(playerDied == true)
             {
+                inGameText.enabled = false;
+                endGameText.enabled = true;
+                distanceEndGame = (int)player.transform.position.x;
+                endGameText.text = "YOU DIED! YOUR DISTANCE IS " + distanceEndGame.ToString();
+                
                 Invoke("endGame", 1.5F);
                 canEndGame = false;
+
             }
         }
 
